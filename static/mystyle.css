@@ -36,6 +36,9 @@ body{
     width:inherit;
     height: 10%;
 }
+
+
+
 #profile{
     align-self: flex-start;
     height: 500%;
@@ -78,6 +81,8 @@ body{
     text-align: left;
     font-size: 0.9em;
 }
+
+
 
 #header{
     height:inherit;
