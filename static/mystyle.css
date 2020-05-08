@@ -1,0 +1,72 @@
+@import url(//fonts.googleapis.com/css?family=Nunito);
+
+body{
+    background-color: #DCD4C7;
+    font-size: 2vw;
+    color: #DCD4C7;
+}
+
+#wrapper{
+    height: 98vh;
+    width: 99vw;
+    overflow: hidden;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    padding:2vh 4vw 2vh 4vw;
+    box-sizing: border-box;
+
+    background-color: #221F2F;
+    display:flex;
+
+}
+#header{
+    height:10%;
+    width: inherit;
+}
+#footer{
+    height:10%;
+    width: inherit;
+}
+#main{
+    height: 80%;
+    width: inherit;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+.text-box{
+    position: relative;
+    left:40px;
+    top:40px;
+    width:50%;
+    box-sizing: content-box;
+}
+h1{
+    font-family: 'Nunito','Courier New', Courier, monospace ;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin:0
+}
+h1 span.title-row{
+    color:#CC2C23;
+    position: relative;
+}
+h3{
+    font-family: 'Nunito','Courier New', Courier, monospace ;
+    font-size:1.4em;
+    font-weight: 600;
+    margin:0px;
+}
+
+#profile-pic{
+    width:225px;
+    height:225px;
+    border-radius: 25px;
+}
+
+.profile-container{
+    width: 30%;
+    height: 20%;
+    background-color: #363737;
+
+}
