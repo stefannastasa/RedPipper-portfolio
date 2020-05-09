@@ -3,25 +3,21 @@
 {% block content %}
 
 <body>
-    <div id="wrapper" class="flex-column">
-        <div id="top" class="flex-row">
-            <div id="profile">
-                <div class="flex-column">
-                    <img id=profile-picture class="profile-container"src="/static/images/profile_pic.jpg" alt="Profile pic">
-                    <h2 class="profile-container">Nastasa Stefan <span class="nickname">@RedPipper</span></h2>
-                    <div class="flex-row profile-container" style="margin-left:-50px">
-                        <i class="material-icons">room</i>
-                        <p class="location">Iasi,Romania</p>
-                    </div>
-                </div>
+    <div id="wrapper" class="flex-row">
+        <div class="title">
+            <div class=text-box>
+                <h2>Nastasa Stefan</h2>
+                <h3>A junior developer \n <span>in love with innovation.</span></h3>
             </div>
-            <div id="header"></div>
         </div>
-        <div id="menu">
-
-        </div>
-        <div id="footer">
-
+        <div class="main flex-column">
+            <div class="data flex-row">
+                <div class="profile"></div>
+                <button type="button" class="ic-btn">
+                    <i class="material-icons icon" >navigate_next</i>
+                </button>
+            </div>
+            <div class="footer"></div>
         </div>
     </div>
 </body>

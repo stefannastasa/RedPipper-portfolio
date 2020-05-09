@@ -3,7 +3,7 @@
 
 body{
     background-color: #363737;
-    font-size: 50px;
+    font-size: 30px;
     color: #DCD4C7;
 }
 
@@ -23,81 +23,82 @@ body{
 
 .flex-column{
     display: flex;
-    flex-flow:column nowrap;
-    justify-content: space-between;
-    align-self: center;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
 }
 .flex-row{
-    display:flex;
+    display: flex;
     display: row nowrap;
-    justify-content: space-evenly;
-}
-#top{
-    width:inherit;
-    height: 10%;
+    justify-content: flex-start;
 }
 
-
-
-#profile{
-    align-self: flex-start;
-    height: 500%;
-    width: 20%;
-    box-sizing: border-box;
-    padding-top: 2vh;
-    padding-left: 1.7vw;
-    padding-right:1.7vh;
-    background-color: #0B0B0B;
-    border-radius: 25px;
-}
-
-#profile-picture{
-    width: 80%;
-    height: 80%;
+.title{
+    height: inherit;
+    width:50%;
     align-self: center;
-    position: relative;
-    border-radius: 25px;
+    box-sizing: content-box;
+    overflow: hidden;
 }
 
-.profile-container{
-    margin-top: 10px;
-    margin-left: 50px;
-    position: relative;
-    text-align: left;
-    font-family: "Bitter", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 0.5em;
-    font-weight: 500;
+.text-box{
+    font-family: "Bitter",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    top:35%;
 }
 
-.nickname{
-    font-size:0.8em;
-    margin-top: 10px;
+.text-box > h2 {
+    font-size: 1.5em;
+    margin-bottom:10%;
+}
+
+.text-box > h3{
+    font-size: 1.8em;
+}
+
+.text-box > h3 > span{
     color: #CC2C23;
     display: block;
 }
-
-.location{
-    flex-shrink:;
-    text-align: left;
-    font-size: 0.9em;
-}
-
-
-
-#header{
+.main{
     height:inherit;
-    width: 80%;
-    box-sizing: border-box;
+    width:50%;
+    align-self: center;
+}
+.data{
+    height: 90%;
+    padding: 5%;
 }
 
-#menu{
-    height:80%;
-    width: inherit;
+.profile{
+    width: 50%;
+    height: 100%;
+    position:relative;
+    margin-left:30%;
+    background-color: #0B0B0B;
+    border-radius: 10px;
 }
-
-#footer{
-    height: 10%;
-    width: inherit;
+.ic-btn{
+    margin-left: 1%;
+    height:35px;
+    align-self: center;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50%;
+}
+.ic-btn:hover{
+    background-color: grey;
+}
+.icon:focus,:active,:hover,::-moz-focus-inner{
+    outline:0;
+    border:0;
+}
+.footer{
+    height:10%;
 }
 
 
