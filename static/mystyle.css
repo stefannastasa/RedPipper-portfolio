@@ -9,11 +9,11 @@ body{
 
 #wrapper{
     height: 98vh;
-    width: 99vw;
+    width: 95vw;
     overflow: hidden;
     position: relative;
-    margin-left: 1vh;
-    margin-right: 1vh;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
     padding:2vh 2vw 2vh 2vw;
@@ -29,7 +29,7 @@ body{
 }
 .flex-row{
     display: flex;
-    display: row nowrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
 }
 
@@ -99,7 +99,7 @@ body{
     height: auto;
     position: relative;
     left:5%;
-    border: solid #F8F2DC;
+    
     border-radius: 25px;
 }
 .profile > p{
@@ -111,6 +111,47 @@ body{
     text-align: left;
     font-size: 0.8em;
     font-family: "Bitter",'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.contacts{
+    position: relative;
+    top:5%;
+    left:2%;
+}
+.contacts > .row{
+    display:block;
+    position: relative;
+    top:5%;
+    left:26%;
+}
+.row > a{
+    display:inline-block;
+    position: relative;
+    margin-top: 5%;
+    margin-right: 6%;
+    color:white;
+}
+.row > a:hover{
+    color:#D64550;
+}
+.discord {
+    position: relative;
+    display: inline-block;
+}
+.discord .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.discord:hover + .tooltiptext{
+    visibility: visible;
 }
 .ic-btn{
     margin-left: 1%;
