@@ -76,14 +76,67 @@ body{
     width:50%;
     align-self: center;
 }
+@keyframes begin_animation{
+    0% {
+        -webkit-transform: translate(700px,0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translate(0px,0);
+        opacity:1;
+    }
+}
+@keyframes hide_profile{
+    0% {
+        -webkit-transform: translate(0,0);
+        opacity:1;
+    }
+    100% {
+        -webkit-transform: translate(700px,0);
+        opacity:0;
+    }
+}
+@keyframes show_profile{
+    0% {
+        -webkit-transform: translate(700px,0);
+        opacity:0;
+    }
+    100% {
+        -webkit-transform: translate(0,0);
+        opacity:1;
+    }
+}
 .data{
+    position: relative;
     height: 90%;
     padding: 5%;
     justify-content: center;
-    
+
+    animation-name: begin_animation;
+    animation-delay: 3.5s;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    animation-fill-mode: both; 
+}
+.appear{
+    animation-name: show_profile;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+}
+.dissapear{
+    animation-name: hide_profile;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    animation-fill-mode: backwards;
 }
 
 .profile{
+    position:relative;
+    visibility: visible;
     width: 400px;
     height: 100%;
     position: relative;
@@ -91,7 +144,10 @@ body{
     border-radius: 25px;
     padding:5%;
     box-sizing: border-box;
+    z-index: 1;
+    
 
+    
 }
 .profile > img{
     display: block;
@@ -107,10 +163,37 @@ body{
     position: relative;
     top:2%;
     margin-bottom: 4%;
-    left:12%;
+    left:15%;
     text-align: left;
     font-size: 0.8em;
     font-family: "Bitter",'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltip-text{
+    font-size: 0.7em;
+    visibility: hidden;
+    background-color: black;
+    border-radius: 10px;
+    color:#fff;
+    text-align: center;
+    padding:5px 0;
+    opacity: 0.5;
+    
+
+    width:120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    position: absolute;
+    z-index: 2;
+}
+.tooltip:hover .tooltip-text{
+    visibility: visible;
 }
 .contacts{
     position: relative;
@@ -133,26 +216,8 @@ body{
 .row > a:hover{
     color:#D64550;
 }
-.discord {
-    position: relative;
-    display: inline-block;
-}
-.discord .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
 
-    position: absolute;
-    z-index: 1;
-}
 
-.discord:hover + .tooltiptext{
-    visibility: visible;
-}
 .ic-btn{
     margin-left: 1%;
     height:35px;
@@ -166,6 +231,7 @@ body{
 .ic-btn:hover{
     background-color: grey;
 }
+
 .icon:focus,:active,:hover,::-moz-focus-inner{
     outline:0;
     border:0;
