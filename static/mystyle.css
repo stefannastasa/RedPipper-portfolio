@@ -12,32 +12,32 @@
 }
 @keyframes hide_profile{
     0% {
-        -webkit-transform: translate(0,0);
+        -webkit-transform: translate(0,0) scale(0);
         opacity:1;
     }
     100% {
-        -webkit-transform: translate(700px,0);
+        -webkit-transform: translate(700px,0) scale(1);
         opacity:0;
     }
 }
 @keyframes show_profile{
     0% {
-        -webkit-transform: translate(-700px,0);
+        -webkit-transform: translate(-700px,0) scale(0);
         opacity:0;
     }
     100% {
-        -webkit-transform: translate(0,0);
+        -webkit-transform: translate(0,0) scale(1);
         opacity:1;
     }
 }
 @keyframes show_github{
     0% {
-        -webkit-transform: translate(-700px,0);
+        -webkit-transform: translate(-700px,0) scale(0);
         -moz-transform: translate(-700px,0);
         opacity:0;
     }
     100% {
-        -webkit-transform: translate(0,0);
+        -webkit-transform: translate(0,0) scale(1);
         -moz-transform: translate(0,0);
         opacity:1;
     }
@@ -45,11 +45,11 @@
 
 @keyframes hide_github{
     0% {
-        -webkit-transform: translate(0,0);
+        -webkit-transform: translate(0,0) scale(0);
         opacity:1;
     }
     100% {
-        -webkit-transform: translate(700px,0);
+        -webkit-transform: translate(700px,0) scale(1);
         opacity:0;
     }
 }
@@ -161,27 +161,40 @@ body{
 }
 .main{
     align-self: center;
-    height:inherit;
+    height:90%;
     width:50%;
 }
 
 .data-profile{
     position: relative;
+    width:inherit;
     height: 90%;
     padding: 5%;
-    align-self: center;
-    justify-content: center;
-    z-index:1;  
+    z-index:1;
+    overflow: hidden;
 }
 .data-github{
-    position: absolute;
+    display:none;
+    -webkit-transform: scale(0);
+    position: relative;
+    width:inherit;
     height: 90%;
+    bottom: 10%;
     padding: 5%;
-    align-self: center;
-    justify-content: center;  
-    z-index:2; 
+    z-index:1;
 }
+
+.proj-list{
+    height: 90%;
+    width: 100%;
+    align-self: center;
+    padding:2%;
+    background-color: black;
+    box-sizing: border-box;
+}
+
 .profile{
+    display:block;
     position:relative;
     visibility: visible;
     width: 400px;
@@ -195,8 +208,8 @@ body{
 }
 .profile > img{
     display: block;
-    width: 90%;
-    height: auto;
+    width:90%;
+    height:auto;
     position: relative;
     left:5%;
     
@@ -267,7 +280,7 @@ body{
 
 
 .ic-btn{
-    display:inline-block;
+    display: inline;
     position: relative;
     left:2%;
     align-self: center;
@@ -287,17 +300,7 @@ body{
     border:0;
 }
 
-.proj-list{
-    overflow:hidden;
-    opacity:1;
-    position: relative;
-    height:90%;
-    width:80%;
 
-    background: 100px;
-    background-color: black;
-    z-index:1;
-}
 
 
 
