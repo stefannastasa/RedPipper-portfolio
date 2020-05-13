@@ -1,5 +1,93 @@
 @import url(//fonts.googleapis.com/css?family=Bitter);
 
+@keyframes begin_animation{
+    0% {
+        -webkit-transform: translate(700px,0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translate(0px,0);
+        opacity:1;
+    }
+}
+@keyframes hide_profile{
+    0% {
+        -webkit-transform: translate(0,0);
+        opacity:1;
+    }
+    100% {
+        -webkit-transform: translate(700px,0);
+        opacity:0;
+    }
+}
+@keyframes show_profile{
+    0% {
+        -webkit-transform: translate(-700px,0);
+        opacity:0;
+    }
+    100% {
+        -webkit-transform: translate(0,0);
+        opacity:1;
+    }
+}
+@keyframes show_github{
+    0% {
+        -webkit-transform: translate(-700px,0);
+        -moz-transform: translate(-700px,0);
+        opacity:0;
+    }
+    100% {
+        -webkit-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        opacity:1;
+    }
+}
+
+@keyframes hide_github{
+    0% {
+        -webkit-transform: translate(0,0);
+        opacity:1;
+    }
+    100% {
+        -webkit-transform: translate(700px,0);
+        opacity:0;
+    }
+}
+
+.first-entry{
+    animation-name: begin_animation;
+    animation-delay: 3.5s;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+.hide-profile{
+    animation-name:hide_profile;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    display:none;
+}
+.show-profile{
+    animation-name:show_profile;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    display: initial;
+}
+
+.hide-github{
+    animation-name:hide_github;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+.show-github{
+    animation-name:show_github;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    display: initial;
+}
 
 body{
     background-color: #7A7D7D;
@@ -72,68 +160,27 @@ body{
     animation: blink 0.7s infinite;
 }
 .main{
+    align-self: center;
     height:inherit;
     width:50%;
-    align-self: center;
 }
-@keyframes begin_animation{
-    0% {
-        -webkit-transform: translate(700px,0);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translate(0px,0);
-        opacity:1;
-    }
-}
-@keyframes hide_profile{
-    0% {
-        -webkit-transform: translate(0,0);
-        opacity:1;
-    }
-    100% {
-        -webkit-transform: translate(700px,0);
-        opacity:0;
-    }
-}
-@keyframes show_profile{
-    0% {
-        -webkit-transform: translate(700px,0);
-        opacity:0;
-    }
-    100% {
-        -webkit-transform: translate(0,0);
-        opacity:1;
-    }
-}
-.data{
+
+.data-profile{
     position: relative;
     height: 90%;
     padding: 5%;
+    align-self: center;
     justify-content: center;
-
-    animation-name: begin_animation;
-    animation-delay: 3.5s;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    animation-fill-mode: both; 
+    z-index:1;  
 }
-.appear{
-    animation-name: show_profile;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    animation-fill-mode: backwards;
+.data-github{
+    position: absolute;
+    height: 90%;
+    padding: 5%;
+    align-self: center;
+    justify-content: center;  
+    z-index:2; 
 }
-.dissapear{
-    animation-name: hide_profile;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    -moz-animation-timing-function: ease-in;
-    animation-fill-mode: backwards;
-}
-
 .profile{
     position:relative;
     visibility: visible;
@@ -144,9 +191,6 @@ body{
     border-radius: 25px;
     padding:5%;
     box-sizing: border-box;
-    z-index: 1;
-    
-
     
 }
 .profile > img{
@@ -174,7 +218,7 @@ body{
     display: inline-block;
 }
 .tooltip .tooltip-text{
-    font-size: 0.7em;
+    font-size: 0.6em;
     visibility: hidden;
     background-color: black;
     border-radius: 10px;
@@ -196,48 +240,63 @@ body{
     visibility: visible;
 }
 .contacts{
+    margin-left:10%;
+    margin-right:10%;
     position: relative;
     top:5%;
     left:2%;
+    display:grid;
+    grid-template-columns: 5% 43% 5% 43% 5%;
+    grid-template-rows: 33% 33% 33%;
+    row-gap:5%;
 }
-.contacts > .row{
-    display:block;
-    position: relative;
-    top:5%;
-    left:26%;
+.first{
+    grid-column:2;
+    justify-self: center;
 }
-.row > a{
-    display:inline-block;
-    position: relative;
-    margin-top: 5%;
-    margin-right: 6%;
+.second{
+    grid-column:4;
+    justify-self: center;
+}
+.first ,.second{
     color:white;
 }
-.row > a:hover{
+.first:hover,.second:hover{
     color:#D64550;
 }
 
 
 .ic-btn{
-    margin-left: 1%;
-    height:35px;
+    display:inline-block;
+    position: relative;
+    left:2%;
     align-self: center;
     border: none;
     border-radius: 50%;
     text-align: center;
     line-height: 50%;
     background-color:inherit;
+    padding-left:10px;
 }
 .ic-btn:hover{
-    background-color: grey;
+    border:thin solid grey;
 }
 
 .icon:focus,:active,:hover,::-moz-focus-inner{
     outline:0;
     border:0;
 }
-.footer{
-    height:10%;
+
+.proj-list{
+    overflow:hidden;
+    opacity:1;
+    position: relative;
+    height:90%;
+    width:80%;
+
+    background: 100px;
+    background-color: black;
+    z-index:1;
 }
 
 
