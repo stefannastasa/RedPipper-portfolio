@@ -16,28 +16,39 @@ function toggleAnimation(){
     profile = document.getElementsByClassName("data-profile")[0];
     button = document.getElementsByClassName("ic-btn")[0];
     github = document.getElementsByClassName("data-github")[0];
-    
+    pStat = true;
+    gStat = false;
+
+
     if(profile.classList.contains("hide-profile") || profile.classList.contains("show-profile")){
         profile.classList.toggle("hide-profile");
         profile.classList.toggle("show-profile");
-        if(profile.style.display != 'flex')
-            profile.style.display = 'none';
-        else profile.style.display = 'flex';
     }
     else profile.classList.add("hide-profile");
     
+    if(!pStat){
+        profile.style.display = 'flex';
+        pStat = true;
+    }else{
+        setTimeout(()=>{
+            profile.style.display = 'none';
+        },1000);
+        pStat = false;
+    }
+    if(!gStat){
+        github.style.display = "flex";
+        gStat = true; 
+    }else{
+        setTimeout(()=>{github.style.display = 'none';},1000);
+        gStat = false;
+    }
+
     if(github.classList.contains("hide-github") || github.classList.contains("show-github")){
         github.classList.toggle("hide-github");
         github.classList.toggle("show-github");
         
-        if(github.style.display == 'none')
-            github.style.display = 'flex';
-        else github.style.display = 'none';
     }
     else github.classList.add("show-github");
-    
-    profile.hidden = !profile.hidden;
-    github.hidden = !github.hidden;
     
 }
 
