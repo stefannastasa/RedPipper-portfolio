@@ -11,13 +11,13 @@ function loader(){
     });
     type.start();
 }
-
+let pStat = true;
+let gStat = false;
 function toggleAnimation(){
     profile = document.getElementsByClassName("data-profile")[0];
     button = document.getElementsByClassName("ic-btn")[0];
     github = document.getElementsByClassName("data-github")[0];
-    pStat = true;
-    gStat = false;
+    
 
 
     if(profile.classList.contains("hide-profile") || profile.classList.contains("show-profile")){
@@ -26,29 +26,32 @@ function toggleAnimation(){
     }
     else profile.classList.add("hide-profile");
     
-    if(!pStat){
-        profile.style.display = 'flex';
-        pStat = true;
-    }else{
-        setTimeout(()=>{
-            profile.style.display = 'none';
-        },1000);
-        pStat = false;
-    }
-    if(!gStat){
-        github.style.display = "flex";
-        gStat = true; 
-    }else{
-        setTimeout(()=>{github.style.display = 'none';},1000);
-        gStat = false;
-    }
-
+    
     if(github.classList.contains("hide-github") || github.classList.contains("show-github")){
         github.classList.toggle("hide-github");
         github.classList.toggle("show-github");
         
     }
     else github.classList.add("show-github");
+    
+    
+    if(!pStat){
+        setTimeout(()=>{
+            profile.style.display = 'flex';
+            github.style.display = 'none';
+        },1000);
+        
+        pStat = true;
+    }else{
+        setTimeout(()=>{
+            profile.style.display = 'none';
+            github.style.display = "flex";
+        },1000);
+        pStat = false;
+    }
+    
+
+    
     
 }
 
