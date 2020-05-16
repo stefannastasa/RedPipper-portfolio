@@ -11,6 +11,10 @@ function loader(){
     });
     type.start();
 }
+
+
+
+
 let pStat = true;
 let gStat = false;
 function toggleAnimation(){
@@ -39,14 +43,14 @@ function toggleAnimation(){
         setTimeout(()=>{
             profile.style.display = 'flex';
             github.style.display = 'none';
-        },1000);
+        },500);
         
         pStat = true;
     }else{
         setTimeout(()=>{
             profile.style.display = 'none';
             github.style.display = "flex";
-        },1000);
+        },500);
         pStat = false;
     }
     
@@ -54,6 +58,7 @@ function toggleAnimation(){
     
     
 }
+
 
 $(document).ready(function(){
     loader();

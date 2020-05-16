@@ -37,9 +37,20 @@
             </div>
             <div class="data-github flex-row" >
                 <div class="proj-list">
-                    
-                    <div class="project-container" style="grid-column: 2;">
-                    </div>
+                    {% for repo in repos %}
+                    {% set pos = ((loop.index+1)%2+1) * 2 %}
+                        <div class="project-container" style="grid-column:{{pos}} ;">
+                            <a href='{{repo["url"]}}' class="pTitle">{{repo["name"]}}</a>
+                            <i class="fas fa-code pLanguage"> {{repo["language"]}}</i>
+                            <div class=pStats>
+                                <p>
+                                    <i class="fas fa-star">{{repo["stars"]}}</i>
+                                       
+                                    <i class="fas fa-code-branch">{{repo["forks"]}}</i>
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
                 <button type="button" class="ic-btn" >
                     <i class="fas fa-angle-right fa-3x"></i>

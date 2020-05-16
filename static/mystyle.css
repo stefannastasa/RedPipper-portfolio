@@ -64,26 +64,26 @@
 
 .hide-profile{
     animation-name:hide_profile;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: both;
     display:none;
 }
 .show-profile{
     animation-name:show_profile;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: both;
     display: initial;
 }
 
 .hide-github{
     animation-name:hide_github;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     display: none;
 }
 .show-github{
     animation-name:show_github;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     display: initial;
 }
@@ -167,15 +167,13 @@ body{
 .data-profile{
     position: relative;
     width:100%;
-    height: 90%;
+    height: 100%;
     z-index:1;
-    top:5%;
     overflow: hidden;
     justify-content: center;
 }
 .data-github{
     display:none;
-    -webkit-transform: scale(0);
     
     height: 100%;
     width:100%;
@@ -189,7 +187,7 @@ body{
 }
 .proj-list{
     display:grid;
-    grid-template-columns: 5% auto 5% auto 5%;
+    grid-template-columns: 5% 42.5% 5% 42.5% 5%;
     grid-auto-rows: 15%;
     row-gap: 5%;
     height: inherit;
@@ -199,11 +197,38 @@ body{
     box-sizing: border-box;
 }
 .project-container{
-    border:solid thin black;
+    max-width:300px;
+    min-height: 50px;
+    font-size:0.8em;
     border-radius: 20px;
-    grid-column: 2;
-    background-color: ;
+    padding:5%;
+    background-color: #2C0703;
+    overflow: hidden;
 }
+.project-container > .pTitle{
+    font-style: "Bitter",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size : 0.9em;
+    font-weight: 600;
+    color:inherit;
+    text-decoration: none;
+    
+}
+.project-container > .pTitle:hover{
+    color:#D64550;
+}
+.project-container > .pLanguage{
+    display:block;
+    margin-top:3%;
+    font-size:0.75em;
+}
+.project-container > .pStats{
+    font-size:0.9em;
+    font-weight: 400;
+    position:relative;
+    left:70%;
+    top:20%;
+}
+
 
 .profile{
     display:block;
@@ -220,11 +245,10 @@ body{
 }
 .profile > img{
     display: block;
-    width:80%;
+    width:90%;
     height:auto;
     position: relative;
-    left:10%;
-    
+    left:5%;
     border-radius: 25px;
 }
 .profile > p{
