@@ -8,8 +8,9 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     data = projects_import();
-    print(data)
     return render_template("index.html", repos = data)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -89,9 +89,9 @@
 }
 
 body{
-    background-color: #7A7D7D;
+    background-color: #463F3A;
     font-size: 30px;
-    color: #F8F2DC;
+    color: #FBFBF2;
 }
 
 #wrapper{
@@ -105,7 +105,12 @@ body{
     margin-bottom: 1vh;
     padding:2vh 2vw 2vh 2vw;
     box-sizing: border-box;
-    background-color: #D64550;
+    /* background-color: #8A817C; */
+    
+    background: -webkit-linear-gradient(45deg, rgb(62, 209, 100), rgb(113, 113, 113));
+    background: linear-gradient(45deg, rgb(62, 209, 100), rgb(113, 113, 113));
+
+
 }
 
 .flex-column{
@@ -134,7 +139,7 @@ body{
     font-weight: 800;
     margin-right: 5%;
     position: absolute;
-    top:22%;
+    top:20%;
 }
 
 .text-box > h2 {
@@ -148,7 +153,7 @@ body{
 }
 
 .text-box > h3 > span{
-    color: #2C0703;
+    color: #35FF69;
 }
 .typed-cursor{
     font-family: "Bitter",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -202,7 +207,7 @@ body{
     font-size:0.8em;
     border-radius: 20px;
     padding:5%;
-    background-color: #2C0703;
+    background-color: #463F3A;
     overflow: hidden;
 }
 .project-container > .pTitle{
@@ -214,7 +219,7 @@ body{
     
 }
 .project-container > .pTitle:hover{
-    color:#D64550;
+    color:#35FF69;
 }
 .project-container > .pLanguage{
     display:block;
@@ -237,7 +242,7 @@ body{
     width: 400px;
     height: 100%;
     position: relative;
-    background-color: #2C0703;
+    background-color: #463F3A;
     border-radius: 25px;
     padding:5%;
     box-sizing: border-box;
@@ -311,7 +316,7 @@ body{
     color:#F8F2DC;
 }
 .first:hover,.second:hover{
-    color:#D64550;
+    color:#35FF69;
 }
 
 
