@@ -2,7 +2,7 @@ from requests import get
 from json import loads
 
 def projects_import():
-    api_response = get("https://api.github.com/user/repos", auth=("RedPipper",""))
+    api_response = get("https://api.github.com/users/RedPipper/repos?sort=pushed&page=1")
     data =  loads(api_response.text)
     result = []
     for repo in data:
