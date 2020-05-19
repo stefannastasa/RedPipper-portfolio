@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nastasasite
+  namespace: tedy
+spec:
+  rules:
+    - host: stefannastasa.cf
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nastasasite
+              servicePort: 5000

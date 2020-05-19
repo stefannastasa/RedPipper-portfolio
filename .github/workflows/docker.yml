@@ -1,0 +1,48 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v1
+      -
+        name: Set up Docker Buildx
+        id: buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: latest
+      -
+        name: Login to Docker
+        run: |
+          docker login \
+          -u ${{ secrets.DOCKER_USERNAME }} \
+          -p ${{ secrets.DOCKER_PASSWORD }}
+      -
+        name: Available platforms
+        run: echo ${{ steps.buildx.outputs.platforms }}
+      -
+        name: Pull Docker base image
+        run: |
+          docker pull redpipper/portfolio:base
+      -
+        name: Run Buildx
+        run: |
+          docker buildx build \
+            --pull \
+            --platform linux/amd64,linux/arm64,linux/arm/v7 \
+            -t redpipper/portfolio \
+            --push .
+      - 
+        name: Deploy using keel
+        uses: jaapio/keelsh-deploy@master
+        with:
+          keelBaseUrl: https://keel.stoicatedy.ovh
+          image: 'redpipper/portfolio'
+          tag: latest
