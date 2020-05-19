@@ -28,10 +28,6 @@ jobs:
         name: Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
       -
-        name: Pull Docker base image
-        run: |
-          docker pull redpipper/portfolio:base
-      -
         name: Run Buildx
         run: |
           docker buildx build \
