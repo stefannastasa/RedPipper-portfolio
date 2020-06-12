@@ -29,7 +29,7 @@ spec:
             requests:
               cpu: "200m"
               memory: "200M"
-          image: tedyst/nastasasite:latest
+          image: redpipper/portfolio:latest
           ports:
             - containerPort: 5000
             - containerPort: 5678
