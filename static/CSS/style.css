@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body{
+  font-size: 4vh;
+  font-family: "Work Sans";
+}
+body{
+  background-color: #8D99AE;
+}
+.half-column{
+  display:grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.half-row{
+  display:grid;
+  grid-template-rows: repeat(2, 50%);
+}
+.wrapper{
+  height:100vh;
+  width:95vw;
+  margin:0 auto;
+
+  display:grid;
+  grid-template-rows: 40% 60%;
+  background-color: #8D99AE;
+}
+/*  UPPER PART  */
+
+.top{
+  height:100%;
+  width:100%;
+
+  display:grid;
+  grid-template-rows: 15% 20% 5% 35% 5% 10% 10%;
+  grid-template-columns: 50% 50%;
+}
+
+.top > h1 {
+  color:#D90429;
+  align-self: center;
+  justify-self: center;
+  font-weight: 600;
+  grid-row:2;
+  grid-column-start: 1;
+  grid-column-end:3;
+  font-size: 1.2em;
+}
+
+
+.top > .quote {
+  color:#D90429;
+  font-size: 0.65em;
+  font-weight:500;
+  grid-row:4;
+  width:100%;
+  text-align:right;
+  align-self: end;
+  justify-self: end;
+  grid-column: 2;
+
+  font-family: "Balsamiq Sans";
+}
+.top > .author {
+  font-size: 0.4em;
+  grid-row:6;
+  align-self: top;
+  justify-self: right;
+  grid-column:2;
+  font-family: "PT Serif";
+}
+
+.picture{
+  border-radius: 20px
+  object-fit:fit;
+  margin:auto;
+  grid-column: 1;
+  grid-row-start:4;
+  grid-row-end: 7;
+  height:100%;
+  max-width: 100%;
+
+  box-shadow: 0 1px 1px rgba(0,0,0,0.08),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.16),
+                0 8px 8px rgba(0,0,0,0.20);
+}
+
+/*       MOSAIC      */
+
+.mosaic{
+  grid-row: 2;
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.icon{
+  color:white;
+}
+.details{
+  font-style: "PT Serif";
+  width:100%;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: left;
+}
+.card{
+    color:white;
+    display:block;
+    padding:3%;
+    width:auto;
+    height:auto;
+    margin:3%;
+    background-color: #D90429;
+    border-radius: 10px;
+
+
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.16),
+                0 8px 8px rgba(0,0,0,0.20);
+}
+.card:hover{
+  color:#D90429;
+  background-color: white;
+  box-shadow:  0 0px 0px rgba(0,0,0,0.12),
+            0 0px 0px rgba(0,0,0,0.12),
+            0 0px 0px rgba(0,0,0,0.12),
+            0 0px 0px rgba(0,0,0,0.12),
+            0 0px 0px rgba(0,0,0,0.12);
+}
+.card:hover > .icon{
+  color: #D90429;
+}
+
+/*       TOOLTIP      */
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltip-text{
+    font-size: 0.6em;
+    visibility: hidden;
+    background-color: black;
+    border-radius: 10px;
+    color:#fff;
+    text-align: center;
+    padding:5px 0;
+    opacity: 0.5;
+
+    width:120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    position: absolute;
+    z-index: 2;
+}
+.tooltip:hover, .tooltip:active .tooltip-text{
+    visibility: visible;
+}
+
+/* PC and laptop screens */
+@media only screen and (min-width: 992px){
+  /*  TOP PART */
+  .wrapper{
+      grid-template-rows: 50% 50%;
+  }
+  .top{
+    grid-template-columns:5% 25% 5% 5% 50% 10%;
+    grid-template-rows: 10% 20% 10% 40% 20%;
+  }
+  .top > h1{
+    font-size: 1.5em;
+    grid-row: 2;
+    grid-column-start:2;
+    grid-column-end: 5;
+  }
+  .top > .quote{
+    font-size:1.3em;
+    align-self: center;
+    text-align: left;
+    grid-row: 4;
+    grid-column: 5;
+  }
+  .top > .author{
+    justify-self:center;
+    align-self: start;
+    font-size:0.8em;
+    grid-row: 5;
+    grid-column: 5;
+  }
+  .top > .picture{
+    grid-row-start:4;
+    grid-row-end:6;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    align-self: center;
+    justify-self:end;
+  }
+
+  /*  MOSAIC  */
+  .bot{
+    display:grid;
+    grid-template-columns: 5% 85% 10%;
+  }
+  .mosaic{
+    margin-top:2.5%;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .card{
+    padding:1%;
+    margin:1%;
+  }
+  .icon{
+    font-size: 0.8em;
+  }
+
+}

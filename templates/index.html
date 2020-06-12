@@ -1,67 +1,50 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang=en>
+  <html>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/CSS/reset.css">
+    <link rel="stylesheet" href="static/CSS/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Work+Sans&Balsamiq+Sans">
+    <script src="https://kit.fontawesome.com/f2fd4830e1.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top">
+        <h1>Nastasa Stefan</h1>
+        <p class="quote">“There are no beautiful surfaces without a terrible depth.“ </p>
+        <p class="author">-Friedrich Nietzsche</p>
+        <img class="picture" style="border-radius:10px;" src="static/profile_pic (1).jpg">
+      </div>
+      <div class="bot">
+        <div class="mosaic">
+          <div class="card">
+            <a class="icon" href="https://github.com/RedPipper" title="Github"><i class="fa fa-github fa-2x"></i></a>
+          </div>
 
-{% block content %}
-
-<body>
-    <div id="wrapper" class="flex-row">
-        <div class="title">
-            <div class=text-box>
-                <h2>Nastasa Stefan</h2>
-                <h3 id=typer></h3>
-                <!--<h3>A junior developer \n <span>in love with innovation.</span></h3> -->
-            </div>
+          <div class="card">
+            <a class="icon" href="https://www.instagram.com/stefannastasa/" title="Instagram"><i class="fa fa-instagram fa-2x"></i></a>
+          </div>
+          <div class="card">
+            <a class="icon"><i class="fa fa-envelope fa-2x"></i></a>
+          </div>
+          <div class="card details">
+            <p style="margin-bottom:3%;"><i class="far fa-user-circle"></i> RedPipper</p>
+            <p style="margin-left:2.5%;"> <i class="fas fa-map-marker-alt"></i> Romania</p>
+          </div>
+          <div class="card">
+            <a class="icon" href="https://www.messenger.com/t/StefnaNatsasa" title="Messenger"><i class="fab fa-facebook-messenger fa-2x"></i></a>
+          </div>
+          <div class="card">
+            <a class="icon"  href="https://www.linkedin.com/in/%C8%99tefan-nastas%C4%83-85619919b/" title="Linked-In"><i class="fab fa-linkedin-in fa-2x"></i></a>
+          </div>
+          <div class="card">
+            <a class="tooltip icon"><i class="fab fa-discord fa-2x"></i><span class="tooltip-text">Black#2373</span></a>
+          </div>
         </div>
-        <div class="main">
-            <div class="data-profile flex-row first-entry" hidden="false">
-                <div class="profile" >
-                    <img src="/static/images/profile_pic.jpg" alt="Profile Picture">
-                    <p>Nastasa Stefan</p>
-                    <p style="font-size: 0.8em;color: #D64550 ; font-weight: 800;">@RedPipper</p>
-                    <p> <i class="material-icons icon">room</i> Iasi, Romania</p>
-                    <p>Where can I be found?</p>
-                    <div class="contacts">
-                            <a class="first"  href="https://github.com/RedPipper" title="Github"><i class="fa fa-github fa-2x"></i></a>
-                            <a class="second" href="https://www.instagram.com/stefannastasa/" title="Instagram"><i class="fa fa-instagram fa-2x"></i></a>
-                            
-                            <a class="first"><i class="fa fa-envelope fa-2x"></i></a>
-                            <a class="second" href="https://www.messenger.com/t/StefnaNatsasa" title="Messenger"><i class="fab fa-facebook-messenger fa-2x"></i></a>
-                            
-                            <a class="first"  href="https://www.linkedin.com/in/%C8%99tefan-nastas%C4%83-85619919b/" title="Linked-In"><i class="fab fa-linkedin-in fa-2x"></i></a>
-                            <a class="tooltip second"><i class="fab fa-discord fa-2x"></i><span class="tooltip-text">Black#2373</span></a>
-                    </div>
-                </div>
-                
-                <button type="button" class="ic-btn" >
-                    <i class="fas fa-angle-right fa-3x"></i>
-                </button>
-            </div>
-            <div class="data-github flex-row" >
-                <div class="proj-list">
-                    {% for repo in repos %}
-                    {% set pos = ((loop.index+1)%2+1) * 2 %}
-                        <div class="project-container" style="grid-column:{{pos}} ;">
-                            <a href='{{repo["url"]}}' class="pTitle">{{repo["name"]}}</a>
-                            <i class="fas fa-code pLanguage"> {{repo["language"]}}</i>
-                            <div class=pStats>
-                                <p>
-                                    <i class="fas fa-star">{{repo["stars"]}}</i>
-                                       
-                                    <i class="fas fa-code-branch">{{repo["forks"]}}</i>
-                                </p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <button type="button" class="ic-btn" >
-                    <i class="fas fa-angle-right fa-3x"></i>
-                </button>
-            </div>
-            
-        </div>
+      </div>
     </div>
-</body>
-{% endblock %}
-
-{% block scripts %}
-<script type="text/javascript"src="/static/javascript/index.js"></script>
-{% endblock %}
+  </body>
+</html>
