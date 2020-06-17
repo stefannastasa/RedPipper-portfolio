@@ -10,6 +10,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Work+Sans&Balsamiq+Sans">
     <script src="https://kit.fontawesome.com/f2fd4830e1.js" crossorigin="anonymous"></script>
+    
   </head>
   <body>
     <div class="wrapper">
@@ -45,8 +46,8 @@
             <a class="tooltip icon"><i class="fab fa-discord fa-2x"></i><span class="tooltip-text">Black#2373</span></a>
           </div>
           {% for project in data %}
-          <a style="text-decoration: none;" href="{{project.url}}" title="Repo">
-            <div class="card project">
+          <a class=repo style="text-decoration: none;" href="{{project.url}}" title="Repo">
+            <div class="card project" >  
               <p class="name">
                 {{project.name}}
               </p>
@@ -61,6 +62,7 @@
               </p>
             </div>
           </a>
+          
           {% endfor %}
         </div>
       </div>
