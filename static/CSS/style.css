@@ -115,11 +115,10 @@ body{
     display:block;
     padding:3%;
     width:auto;
-    height:auto;
+    max-height:auto;
     margin:1.5%;
     background-color: #D90429;
     border-radius: 10px;
-
 
     box-shadow: 0 1px 1px rgba(0,0,0,0.08),
                 0 2px 2px rgba(0,0,0,0.12),
@@ -138,7 +137,35 @@ body{
 .card:hover > .icon{
   color: #D90429;
 }
-
+/*  PROJECT CARD */
+.project {
+  text-decoration: none;
+  display: flex;
+  font-size: 0.5em;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.project > .name{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.project > .description{
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.project > .language{
+  align-self: right;
+  font-size:0.7em;
+  font-weight:800;
+}
+.project > .interactions{
+  font-size: 0.6em;
+  font-weight: 700;
+  text-align: right;
+}
 /*       TOOLTIP      */
 .tooltip{
     position: relative;
@@ -220,4 +247,5 @@ body{
     margin: 1%;
     padding:1%;
   }
+  
 }

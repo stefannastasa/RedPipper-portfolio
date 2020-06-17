@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang=en>
   <html>
+    <title>Nastasa Stefan</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/CSS/reset.css">
@@ -43,6 +44,24 @@
           <div class="card">
             <a class="tooltip icon"><i class="fab fa-discord fa-2x"></i><span class="tooltip-text">Black#2373</span></a>
           </div>
+          {% for project in data %}
+          <a style="text-decoration: none;" href="{{project.url}}" title="Repo">
+            <div class="card project">
+              <p class="name">
+                {{project.name}}
+              </p>
+              <p class="description">
+                {{project.description}}
+              </p>
+              <p class="language">
+                <i class="fas fa-code"></i> {{project.language}}
+              </p>
+              <p class="interactions">
+                <i class="fas fa-code"></i>{{project.stars}}    <i class="fas fa-code-branch"></i>{{project.forks}}
+              </p>
+            </div>
+          </a>
+          {% endfor %}
         </div>
       </div>
     </div>

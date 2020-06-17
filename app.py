@@ -7,7 +7,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    result = projects_import()
+    
+    return render_template("index.html", data=result)
 
 
 
